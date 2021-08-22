@@ -57,8 +57,10 @@ export default StyleSheet.create({
         color:Colors.mainColor
     },
     card_answer:{
+        flex:1,
         fontSize:18,
         fontWeight:"bold",
+        
     }
 
 })

@@ -143,7 +143,7 @@ const Router=()=>{
             <Stack.Screen name="AuthStack" component={AuthStack} />
           ):(
             <>
-              <Stack.Screen name="MainTab" component={MainTab}/>
+              <Stack.Screen name="MainTabStack" component={MainTab}/>
               <Stack.Screen name="UserPage" component={UserProfile} options={{
                 headerTitleAlign:"center",
                 headerShown:true,

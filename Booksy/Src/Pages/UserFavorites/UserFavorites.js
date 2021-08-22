@@ -7,13 +7,16 @@ import styles from "./UserFavorites.style"
 import Loading from "../../Components/Loading/Loading"
 
 
-const UserFavorites=({route})=>{
+const UserFavorites=({navigation,route})=>{
     const [loading,setLoading]=useState(false)
     const [favList,setFavList]=useState([])
     const username=route.params
+
+
     
 
     useEffect(()=>{
+        navigation.setOptions({title:`Favorites of ${username}`})
         setLoading(true)
         try {
             database()
@@ -32,7 +35,15 @@ const UserFavorites=({route})=>{
 
 
     function renderFavorites({item}){
-        return <FavoritesCard id={item.id} name={item.name} image={item.image} type={item.type} author={item.author} date={item.date}/>
+        return <FavoritesCard
+            likes={item.likes} 
+            id={item.id} 
+            name={item.name} 
+            image={item.image} 
+            type={item.type} 
+            author={item.author} 
+            date={item.date}
+        />
     }
 
 

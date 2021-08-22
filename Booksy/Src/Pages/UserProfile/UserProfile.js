@@ -49,6 +49,7 @@ const UserProfile=({navigation,route})=>{
         comment={item.comment}
         date={item.date}
         image={item.image}
+        likes={item.likes}
         //lookProfile={()=>lookProfile(item.username)}
     />
     }

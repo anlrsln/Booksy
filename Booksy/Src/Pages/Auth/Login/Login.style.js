@@ -11,7 +11,11 @@ export default StyleSheet.create({
         alignItems:"center",
         justifyContent:"center"
     },
-    img:{},
+    img:{
+        resizeMode:"contain",
+        height:250,
+        width:300
+    },
     form_body:{
         flex:2
         //alignItems:"center"

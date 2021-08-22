@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { View,Text } from "react-native"
+import { View,Text, Image } from "react-native"
 import AuthButton from "../../../Components/Buttons/AuthButton"
 import Input from "../../../Components/Input"
 import styles from "./Login.style"
@@ -13,8 +13,12 @@ const Login=({navigation})=>{
 
     const [loading,setLoading]=useState(false)
 
-    function cross(){
-        navigation.navigate("MainTab",{screen:"MainPage"})
+    function passToMain(){
+        navigation.navigate("MainTabStack")
+    }
+
+    function passToSign(){
+        navigation.navigate("SignPage")
     }
 
 
@@ -35,7 +39,7 @@ const Login=({navigation})=>{
                 type:"success"
             })
             setLoading(false)
-            cross()
+            passToMain()
         }catch(error){
             showMessage({
                 message:authErrorMessageParser(error.code),
@@ -50,7 +54,7 @@ const Login=({navigation})=>{
     return(
         <View style={styles.container}>
             <View style={styles.img_container}>
-                <Text style={{fontSize:60}}>LOGO</Text>
+                <Image style={styles.img} source={require("../../../Assets/Logo/0ad9702ff5ed4bbb9d38dcea7040ed1e.png")}/>
             </View>
             <View style={styles.form_body}>
                 <Formik
@@ -60,13 +64,18 @@ const Login=({navigation})=>{
                 {({handleChange,handleSubmit,values})=>(
                     <>
                         <Input placeholder="Email" onChangeText={handleChange("email")} value={values.email} icon={"card-account-mail-outline"}/>
-                        <Input placeholder="Password" onChangeText={handleChange("password")} value={values.password} icon={"lock-outline"} isSecure/>
+                        <Input 
+                            placeholder="Password" 
+                            onChangeText={handleChange("password")} 
+                            value={values.password} icon={"lock-outline"} 
+                            isSecure
+                        />
                         <AuthButton name="Login" onPress={handleSubmit} icon={"login"}/>
                     </>
                 )}
 
                 </Formik>
-                <AuthButton name="Sign Up" onPress={null} theme="secondary" icon={"account-plus-outline"}/>
+                <AuthButton name="Sign Up" onPress={passToSign} theme="secondary" icon={"account-plus-outline"}/>
             </View>
 
         </View>
