@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "249939847419",
+    "project_id": "booksy-practice",
+    "storage_bucket": "booksy-practice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249939847419:android:d2a8c85062ec04dd5f285e",
+        "android_client_info": {
+          "package_name": "com.booksy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "249939847419-qpgr1p8r4igiipr0to3f9fld3cjfbe4u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2WpxPOfZbu6i8Cc41vTF054q1PHA8Bb8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "249939847419-qpgr1p8r4igiipr0to3f9fld3cjfbe4u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
